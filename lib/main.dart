@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_full_learn/101/color_learn.dart';
 import 'package:flutter_full_learn/101/icon_learn.dart';
 
 void main() {
@@ -20,15 +21,17 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       //AppBarımızı belirli standartlarda oluşturduk
       theme: ThemeData.dark().copyWith(
+          //Uygulamadaki errorColor'ı standart haline getirdik
+          errorColor: ColorsItems.sulu,
           appBarTheme: const AppBarTheme(
-        centerTitle: true,
-        //Sistem viewlarının stillerini ayarlar
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        //Transparan ve elevation'ı 0 verirsek sayfayla birebir AppBar olur. Güzel de olur :))
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      )),
-      home: IconLearnView(),
+            centerTitle: true,
+            //Sistem viewlarının stillerini ayarlar
+            systemOverlayStyle: SystemUiOverlayStyle.light,
+            //Transparan ve elevation'ı 0 verirsek sayfayla birebir AppBar olur. Güzel de olur :))
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+          )),
+      home: const ColorLearn(),
     );
   }
 }
