@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 /* Herhangi bir data işleminin yapılmayacağı sadece ekran tasarımını yapılacağı vakit kullanılan widget türü, statelessWidget'tır.
 Durum tabiki yapmaz.*/
 class StatelessLearn extends StatelessWidget {
+  const StatelessLearn({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
