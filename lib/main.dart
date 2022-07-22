@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/color_learn.dart';
 import 'package:flutter_full_learn/101/icon_learn.dart';
+import 'package:flutter_full_learn/101/stateless_learn.dart';
 
 void main() {
   // Proje burada başlar ama proje şeması MaterialApp de çizilir ve proje
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const ColorLearn(),
+      home: StatelessLearn(),
     );
   }
 }
