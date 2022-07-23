@@ -6,6 +6,7 @@ import 'package:flutter_full_learn/101/icon_learn.dart';
 import 'package:flutter_full_learn/101/image_learn.dart';
 import 'package:flutter_full_learn/101/padding_learn.dart';
 import 'package:flutter_full_learn/101/stateless_learn.dart';
+import 'package:flutter_full_learn/demos/note_demos_view.dart';
 
 void main() {
   // Proje burada başlar ama proje şeması MaterialApp de çizilir ve proje
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       //AppBarımızı belirli standartlarda oluşturduk
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData.light().copyWith(
           //Uygulamadi tüm card widgetlarının temasını özelleştirdik
           cardTheme: CardTheme(
             shape:
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const ImageLearn(),
+      home: NoteDemos(),
     );
   }
 }
