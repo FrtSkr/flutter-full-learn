@@ -5,6 +5,7 @@ import 'package:flutter_full_learn/101/color_learn.dart';
 import 'package:flutter_full_learn/101/custom_widget_learn.dart';
 import 'package:flutter_full_learn/101/icon_learn.dart';
 import 'package:flutter_full_learn/101/image_learn.dart';
+import 'package:flutter_full_learn/101/indicator_learn.dart';
 import 'package:flutter_full_learn/101/padding_learn.dart';
 import 'package:flutter_full_learn/101/stateless_learn.dart';
 import 'package:flutter_full_learn/demos/note_demos_view.dart';
@@ -26,11 +27,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       //AppBarımızı belirli standartlarda oluşturduk
-      theme: ThemeData.light().copyWith(
+      theme: ThemeData.dark().copyWith(
           //Uygulamadi tüm card widgetlarının temasını özelleştirdik
           cardTheme: CardTheme(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          ),
+          //Progredd Indicator için de temayı standart haline getirebiliriz.
+          progressIndicatorTheme: const ProgressIndicatorThemeData(
+            color: Colors.white,
           ),
           //Uygulamadaki errorColor'ı standart haline getirdik
           errorColor: ColorsItems.sulu,
@@ -42,7 +47,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const CustomWidgetLearn(),
+      home: const IndicatorLearn(),
     );
   }
 }
