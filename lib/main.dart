@@ -12,6 +12,8 @@ import 'package:flutter_full_learn/demos/color_demos_view.dart';
 import 'package:flutter_full_learn/demos/color_life_cycle_view.dart';
 import 'package:flutter_full_learn/demos/my_collections_demos.dart';
 
+import '101/navigation_learn.dart';
+
 void main() {
   // Proje burada başlar ama proje şeması MaterialApp de çizilir ve proje
   // orada devam eder.
@@ -52,7 +54,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const MyCollectionsDemos(),
+      home: const NavigationLearn(),
     );
   }
 }
