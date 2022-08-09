@@ -8,6 +8,7 @@ import 'package:flutter_full_learn/101/stack_learn.dart';
 import 'package:flutter_full_learn/101/statefull_learn.dart';
 import 'package:flutter_full_learn/101/statefull_life_cycle_learn.dart';
 import 'package:flutter_full_learn/101/text_field_learn.dart';
+import 'package:flutter_full_learn/demos/MyProjects/login_screen.dart';
 import 'package:flutter_full_learn/demos/color_demos_view.dart';
 import 'package:flutter_full_learn/demos/color_life_cycle_view.dart';
 import 'package:flutter_full_learn/demos/my_collections_demos.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       //AppBarımızı belirli standartlarda oluşturduk
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData.light().copyWith(
           //Uygulamadi tüm card widgetlarının temasını özelleştirdik
           cardTheme: CardTheme(
             shape:
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const NavigationLearn(),
+      home: const LoginScreen(),
     );
   }
 }
