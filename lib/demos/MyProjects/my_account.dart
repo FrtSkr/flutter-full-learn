@@ -18,6 +18,7 @@ class _MyAccountState extends State<MyAccount>
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CustomCardMyAccount(),
+          //Buradaki tekrar listview builder ile giderilecek.
           CustomListTileMyAccount(
             imgPath: getFullImgPath("notifcation_img.webp"),
             titleName: "Notification",
