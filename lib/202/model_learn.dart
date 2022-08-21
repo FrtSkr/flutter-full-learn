@@ -90,9 +90,15 @@ class PostModel8 {
   final int? userId;
   final int? id;
   final String? title;
-  final String? body;
+  String? body;
 
   PostModel8({this.userId, this.id, this.title, this.body});
+
+  updateBody(String? data) {
+    if (data != null && data.isNotEmpty) {
+      body = data;
+    }
+  }
 
 //Final tanımlı değişkenler çalışma zamanından sonra atanamayacağı için
 //copyWith yöntemi kullanılarak sonradan değişken tanımı veya değer değişimi
