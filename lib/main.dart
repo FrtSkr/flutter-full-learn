@@ -8,12 +8,17 @@ import 'package:flutter_full_learn/101/stack_learn.dart';
 import 'package:flutter_full_learn/101/statefull_learn.dart';
 import 'package:flutter_full_learn/101/statefull_life_cycle_learn.dart';
 import 'package:flutter_full_learn/101/text_field_learn.dart';
+import 'package:flutter_full_learn/202/tab_learn.dart';
 import 'package:flutter_full_learn/demos/MyProjects/login_screen.dart';
+import 'package:flutter_full_learn/demos/MyProjects/my_account.dart';
 import 'package:flutter_full_learn/demos/color_demos_view.dart';
 import 'package:flutter_full_learn/demos/color_life_cycle_view.dart';
 import 'package:flutter_full_learn/demos/my_collections_demos.dart';
 
 import '101/navigation_learn.dart';
+import '202/model_learn_view.dart';
+import '202/service/service_learn_view.dart';
+import '202/service/service_post_learn_view.dart';
 
 void main() {
   // Proje burada başlar ama proje şeması MaterialApp de çizilir ve proje
@@ -31,8 +36,13 @@ class MyApp extends StatelessWidget {
     //projenin yapısını bozar.
     return MaterialApp(
       title: 'Flutter Demo',
-      //AppBarımızı belirli standartlarda oluşturduk
-      theme: ThemeData.light().copyWith(
+      theme: ThemeData.dark().copyWith(
+          //TabBar'ı özelleştirdik
+          tabBarTheme: const TabBarTheme(
+            labelColor: Colors.green,
+            unselectedLabelColor: Colors.grey,
+            indicatorSize: TabBarIndicatorSize.label,
+          ),
           //Uygulamadi tüm card widgetlarının temasını özelleştirdik
           cardTheme: CardTheme(
             shape:
@@ -47,6 +57,7 @@ class MyApp extends StatelessWidget {
               const ListTileThemeData(contentPadding: EdgeInsets.zero),
           //Uygulamadaki errorColor'ı standart haline getirdik
           errorColor: ColorsItems.sulu,
+          //AppBarımızı belirli standartlarda oluşturduk
           appBarTheme: const AppBarTheme(
             centerTitle: true,
             //Sistem viewlarının stillerini ayarlar
@@ -55,7 +66,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const LoginScreen(),
+      home: const ServicePostLearn(),
     );
   }
 }

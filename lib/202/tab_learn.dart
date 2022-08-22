@@ -34,7 +34,7 @@ class _TabLearnState extends State<TabLearn> with TickerProviderStateMixin {
         //TabBar'ı oluşturur.
         bottomNavigationBar: BottomAppBar(
           notchMargin: 10,
-          shape: CircularNotchedRectangle(),
+          shape: const CircularNotchedRectangle(),
           child: TabBar(
             controller: _tabController,
             indicatorColor: Colors.white,
