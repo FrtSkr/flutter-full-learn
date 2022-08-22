@@ -1,7 +1,9 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/202/service/comment_view.dart';
 import 'package:flutter_full_learn/202/service/post_model.dart';
+import 'package:flutter_full_learn/202/service/post_service.dart';
 
 class ServiceLearn extends StatefulWidget {
   const ServiceLearn({Key? key}) : super(key: key);
@@ -15,6 +17,7 @@ class _ServiceLearnState extends State<ServiceLearn> {
   final String _baseUrl = "https://jsonplaceholder.typicode.com/";
   List<PostModel>? _items;
   bool _isLoading = false;
+  late final PostService _postService;
   late final Dio _dio;
   void changeLoading() {
     setState(() {
@@ -26,7 +29,8 @@ class _ServiceLearnState extends State<ServiceLearn> {
   void initState() {
     super.initState();
     _dio = Dio(BaseOptions(baseUrl: _baseUrl));
-    fetchPostItems();
+    _postService = PostService();
+    fetchPostItemsAdvance();
   }
 
   Future<void> fetchPostItems() async {
@@ -48,16 +52,7 @@ class _ServiceLearnState extends State<ServiceLearn> {
 
   Future<void> fetchPostItemsAdvance() async {
     changeLoading();
-    final response = await Dio().get(servicePath);
-    if (response.statusCode == HttpStatus.ok) {
-      final _datas = response.data;
-
-      if (_datas is List) {
-        setState(() {
-          _items = _datas.map((e) => PostModel.fromJson(e)).toList();
-        });
-      }
-    }
+    _items = await _postService.fetchPostItems();
     changeLoading();
   }
 
@@ -99,6 +94,10 @@ class _PostCard extends StatelessWidget {
       child: ListTile(
         title: Text(_model?.title ?? ''),
         subtitle: Text(_model?.body ?? ''),
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => CommentView(postId: _model?.id)));
+        },
       ),
     );
   }
