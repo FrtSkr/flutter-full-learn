@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_full_learn/202/package/loading_bar.dart';
 
 class PackageLearnView extends StatefulWidget {
   const PackageLearnView({Key? key}) : super(key: key);
@@ -16,12 +14,7 @@ class _PackageLearnViewState extends State<PackageLearnView>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: SpinKitSquareCircle(
-        color: Colors.white,
-        size: 50.0,
-        controller: AnimationController(
-            vsync: this, duration: const Duration(milliseconds: 1200)),
-      ),
+      body: const LoadingBar(),
     );
   }
 }

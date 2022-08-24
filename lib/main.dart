@@ -17,6 +17,8 @@ import 'package:flutter_full_learn/demos/my_collections_demos.dart';
 
 import '101/navigation_learn.dart';
 import '202/model_learn_view.dart';
+import '202/package/loading_bar.dart';
+import '202/package_learn_view.dart';
 import '202/service/service_learn_view.dart';
 import '202/service/service_post_learn_view.dart';
 
@@ -66,7 +68,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
           )),
-      home: const ServicePostLearn(),
+      home: const PackageLearnView(),
     );
   }
 }
