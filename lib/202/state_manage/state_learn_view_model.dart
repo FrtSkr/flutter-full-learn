@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+
+import 'state_manage_learn_view.dart';
+
+abstract class StateLearnViewModel extends State<StateManageLearnView> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  bool isVisible = false;
+  bool isOpacity = false;
+
+  void changedLoading() {
+    setState(() {
+      isVisible = !isVisible;
+    });
+  }
+
+  void changedOpacity() {
+    setState(() {
+      isOpacity = !isOpacity;
+    });
+  }
+}
