@@ -4,11 +4,11 @@ import 'custom_exception.dart';
 abstract class IFileDownload {
   bool? downloadItem(FileItem? fileItem);
   void toShare() {
-    print("deneme");
+    print("IFileDownload");
   }
 }
 
-class FileDownload implements IFileDownload {
+class FileDownload extends IFileDownload {
   @override
   bool? downloadItem(FileItem? fileItem) {
     if (fileItem == null) throw FileDownloadException();
@@ -17,10 +17,11 @@ class FileDownload implements IFileDownload {
     return true;
   }
 
-  @override
-  void toShare() {
-    print("FileDownload");
-  }
+  // @override
+  // void toShare() {
+  //   print("FileDownload");
+  // }
+
 }
 
 class FileItem {
@@ -28,4 +29,8 @@ class FileItem {
   final File file;
 
   FileItem(this.name, this.file);
+}
+
+mixin ShareMixin on IFileDownload {
+  void toShowFile() {}
 }
